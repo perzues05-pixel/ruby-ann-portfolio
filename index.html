@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruby Ann Acosta De La Cruz — Customer Support Specialist</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root{
+    --navy:#16243d;
+    --navy-light:#1f3658;
+    --paper:#f7f5f1;
+    --teal:#2f8f84;
+    --coral:#e2725b;
+    --ash:#6b7280;
+    --line:#e3e0d8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--navy);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:600; letter-spacing:-0.01em;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+  a{color:inherit; text-decoration:none;}
+  ::selection{background:var(--teal); color:white;}
+
+  nav{
+    position:sticky; top:0; z-index:100;
+    background:rgba(247,245,241,0.92); backdrop-filter:blur(6px);
+    display:flex; justify-content:space-between; align-items:center;
+    padding:20px 56px; border-bottom:1px solid var(--line);
+  }
+  nav .mark{font-family:'Fraunces',serif; font-weight:700; font-size:1.05rem;}
+  nav ul{list-style:none; display:flex; gap:30px; font-size:0.85rem;}
+  nav a:hover{color:var(--teal);}
+  @media(max-width:680px){ nav{padding:16px 22px;} nav ul{gap:16px; font-size:0.78rem;} }
+
+  section{padding:80px 56px;}
+  @media(max-width:680px){ section{padding:56px 22px;} }
+
+  /* HERO */
+  .hero{
+    padding-top:90px; padding-bottom:60px;
+    display:grid; grid-template-columns:1.3fr 1fr; gap:50px; align-items:center;
+  }
+  @media(max-width:900px){ .hero{grid-template-columns:1fr; gap:30px;} }
+  .badge{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--navy); color:white;
+    padding:6px 14px; border-radius:3px;
+    font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .badge::before{content:""; width:7px; height:7px; border-radius:50%; background:#5fd6a8;}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.4rem); line-height:1.08; margin-bottom:14px;}
+  .hero .role{font-size:1.1rem; color:var(--teal); font-weight:600; margin-bottom:20px;}
+  .hero p{max-width:48ch; color:var(--ash); font-size:0.98rem;}
+  .hero .contact-row{
+    margin-top:28px; display:flex; gap:18px; flex-wrap:wrap;
+    font-size:0.82rem; color:var(--navy);
+  }
+  .hero .contact-row span{padding-bottom:2px; border-bottom:1px solid var(--line);}
+
+  .ticket-card{
+    background:white; border:1px solid var(--line); border-radius:6px;
+    padding:26px; box-shadow:0 12px 30px -16px rgba(22,36,61,0.25);
+  }
+  .ticket-card .tk-id{font-size:0.7rem; color:var(--ash); margin-bottom:6px;}
+  .ticket-card .tk-status{
+    display:inline-block; background:#e9f6f2; color:var(--teal);
+    font-size:0.7rem; font-weight:600; padding:3px 10px; border-radius:20px; margin-bottom:18px;
+  }
+  .ticket-card .stat{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:11px 0; border-bottom:1px dashed var(--line);
+  }
+  .ticket-card .stat:last-child{border-bottom:none;}
+  .ticket-card .stat .label{font-size:0.78rem; color:var(--ash);}
+  .ticket-card .stat .val{font-size:1.05rem; font-weight:700; color:var(--navy);}
+
+  /* SECTION HEAD */
+  .sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:34px;}
+  .sec-head .idx{font-family:'JetBrains Mono',monospace; color:var(--teal); font-size:0.85rem;}
+  .sec-head h2{font-size:clamp(1.5rem,3vw,2rem);}
+
+  /* EXPERIENCE TIMELINE */
+  .timeline{border-left:2px solid var(--line); padding-left:34px; max-width:760px;}
+  .role-block{position:relative; margin-bottom:38px;}
+  .role-block::before{
+    content:""; position:absolute; left:-41px; top:6px;
+    width:11px; height:11px; border-radius:50%; background:var(--teal);
+    border:3px solid var(--paper); box-shadow:0 0 0 2px var(--teal);
+  }
+  .role-block .top{display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; margin-bottom:6px;}
+  .role-block .title{font-weight:700; font-size:1.02rem;}
+  .role-block .company{color:var(--teal); font-weight:600;}
+  .role-block .dates{font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--ash);}
+  .role-block .org-note{font-size:0.85rem; color:var(--ash); margin-bottom:10px; font-style:italic;}
+  .role-block ul{list-style:none; padding:0;}
+  .role-block li{
+    font-size:0.9rem; color:#374151; padding-left:18px; position:relative; margin-bottom:6px;
+  }
+  .role-block li::before{content:"—"; position:absolute; left:0; color:var(--coral);}
+
+  .earlier-grid{
+    margin-top:10px; display:grid; grid-template-columns:repeat(2,1fr); gap:10px 30px;
+    max-width:760px; padding-top:18px; border-top:1px solid var(--line);
+  }
+  @media(max-width:680px){ .earlier-grid{grid-template-columns:1fr;} }
+  .earlier-grid .item{display:flex; justify-content:space-between; font-size:0.85rem; padding:8px 0; border-bottom:1px solid var(--line);}
+  .earlier-grid .item .co{color:var(--navy); font-weight:600;}
+  .earlier-grid .item .yr{color:var(--ash); font-family:'JetBrains Mono',monospace; font-size:0.74rem;}
+
+  /* SKILLS */
+  .skills-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media(max-width:780px){ .skills-grid{grid-template-columns:1fr;} }
+  .skill-card{background:white; border:1px solid var(--line); border-radius:6px; padding:22px;}
+  .skill-card h3{font-size:1rem; margin-bottom:10px; color:var(--navy);}
+  .skill-card p{font-size:0.85rem; color:var(--ash);}
+
+  /* PROJECTS */
+  .proj-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  @media(max-width:780px){ .proj-grid{grid-template-columns:1fr;} }
+  .proj-card{
+    background:white; border:1px solid var(--line); border-radius:6px; padding:24px;
+    border-top:3px solid var(--coral);
+  }
+  .proj-card .tag{font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--coral); margin-bottom:8px; display:block;}
+  .proj-card h3{font-size:1rem; margin-bottom:8px;}
+  .proj-card p{font-size:0.88rem; color:var(--ash);}
+
+  /* CONTACT */
+  .contact-section{background:var(--navy); color:white;}
+  .contact-section h2{color:white; font-size:clamp(1.8rem,4vw,2.6rem); max-width:16ch; margin-bottom:30px;}
+  .contact-grid{display:flex; gap:50px; flex-wrap:wrap;}
+  .contact-grid .k{font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; color:#9fb0c9; margin-bottom:6px;}
+  .contact-grid .v{font-size:1rem; border-bottom:1px solid rgba(255,255,255,0.25); padding-bottom:3px; display:inline-block;}
+  .contact-grid .v:hover{border-color:var(--teal); color:var(--teal);}
+
+  footer{padding:24px 56px; font-size:0.75rem; color:var(--ash); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+  @media(max-width:680px){ footer{padding:20px 22px;} }
+
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important;} }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="mark">Ruby Ann · CSR</div>
+  <ul>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="badge">Open to remote opportunities</div>
+    <h1>Ruby Ann Acosta De La Cruz</h1>
+    <div class="role">Remote Customer Support Specialist · CRM &amp; Account Management</div>
+    <p>9+ years resolving customer issues across telecom, banking, and BPO environments — for Tech Mahindra, Concentrix, and Synchrony. I bring measurable performance, calm de-escalation, and CRM fluency to every conversation.</p>
+    <div class="contact-row">
+      <span>Perzues05@gmail.com</span>
+      <span>+63 995-506-1380</span>
+      <span>Cebu, Philippines</span>
+      <span>linkedin.com/in/ruby-ann-de-la-cruz-b15263194</span>
+    </div>
+  </div>
+  <div class="ticket-card">
+    <div class="tk-id mono">TICKET #SYN-2026-CSR</div>
+    <div class="tk-status">● Resolved — exceeds target</div>
+    <div class="stat"><span class="label">CSAT (avg, recent roles)</span><span class="val mono">95–98%</span></div>
+    <div class="stat"><span class="label">First Contact Resolution</span><span class="val mono">98%</span></div>
+    <div class="stat"><span class="label">QA Score</span><span class="val mono">98%</span></div>
+    <div class="stat"><span class="label">Avg. Handling Time</span><span class="val mono">3:00–4:15</span></div>
+    <div class="stat"><span class="label">Years in support</span><span class="val mono">9+</span></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sec-head"><span class="idx mono">01</span><h2>Professional Experience</h2></div>
+
+  <div class="timeline">
+    <div class="role-block">
+      <div class="top"><span class="title">Customer Service Representative <span class="company">— Synchrony</span></span><span class="dates">2021 – Present</span></div>
+      <div class="org-note">U.S. consumer financial services company — private-label credit cards &amp; digital banking, Cebu &amp; Metro Manila hubs.</div>
+      <ul>
+        <li>Managed high-volume inbound inquiries on accounts, balances, and credit limits</li>
+        <li>Maintained 100% adherence to banking compliance and data privacy protocols</li>
+        <li>Resolved billing and interest-rate discrepancies; processed payments and credit applications</li>
+        <li>Sustained a 98% QA score and 3:20 AHT while negotiating payment arrangements on past-due accounts</li>
+      </ul>
+    </div>
+
+    <div class="role-block">
+      <div class="top"><span class="title">Customer Service Associate <span class="company">— Concentrix</span></span><span class="dates">2019 – 2021</span></div>
+      <div class="org-note">Fortune 500 global CX and business process outsourcing leader.</div>
+      <ul>
+        <li>Delivered omnichannel support via phone, chat, and email — 40–50 inquiries resolved per shift</li>
+        <li>Maintained a 95% CSAT score, 5 points above team baseline</li>
+        <li>Reduced AHT to 4:15 by optimizing lookup workflows without sacrificing quality</li>
+        <li>De-escalated high-stress situations and surfaced upsell opportunities, contributing to a 10% revenue lift</li>
+      </ul>
+    </div>
+
+    <div class="role-block">
+      <div class="top"><span class="title">Technical Support / Customer Service Associate <span class="company">— Tech Mahindra</span></span><span class="dates">2017 – 2019</span></div>
+      <div class="org-note">Global digital consulting, IT &amp; BPS company operating in 90+ countries.</div>
+      <ul>
+        <li>Diagnosed and resolved mobile, broadband, and fiber connectivity issues</li>
+        <li>Managed billing adjustments, service activations, and account modifications via telecom CRM</li>
+        <li>Maintained a 98% FCR rate and 98% CSAT score with a 3:00 AHT</li>
+        <li>Followed strict verification protocols to protect customer accounts</li>
+      </ul>
+    </div>
+
+    <div class="earlier-grid">
+      <div class="item"><span class="co">Pizza Hut — Front-of-House Cashier</span><span class="yr">2016–17</span></div>
+      <div class="item"><span class="co">Army Navy Burger + Burrito — Cashier</span><span class="yr">2014–15</span></div>
+      <div class="item"><span class="co">Olympic Village — Retail Sales Associate</span><span class="yr">2014–15</span></div>
+      <div class="item"><span class="co">Sunglass Haven — Sales Associate</span><span class="yr">2014</span></div>
+      <div class="item"><span class="co">Metro Supermarket — Sales Associate</span><span class="yr">2013–14</span></div>
+      <div class="item"><span class="co">McDonald's — Head Crew / Trainer</span><span class="yr">2010–13</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec-head"><span class="idx mono">02</span><h2>Core Skills</h2></div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>Customer Support</h3>
+      <p>Ticketing, billing &amp; account management, de-escalation, retention, omnichannel (phone, chat, email)</p>
+    </div>
+    <div class="skill-card">
+      <h3>CRM &amp; Compliance</h3>
+      <p>Telecom &amp; banking CRM platforms, data entry, CPNI / data-privacy compliance protocols</p>
+    </div>
+    <div class="skill-card">
+      <h3>Performance</h3>
+      <p>Consistent track record against AHT, CSAT (95–98%), QA, and FCR targets</p>
+    </div>
+    <div class="skill-card">
+      <h3>Remote Tools</h3>
+      <p>Google Workspace, Zoom, email support platforms, general VA training</p>
+    </div>
+    <div class="skill-card">
+      <h3>E-commerce Exposure</h3>
+      <p>Shopify &amp; Amazon order support, inventory updates, basic listing edits</p>
+    </div>
+    <div class="skill-card">
+      <h3>Design &amp; Content</h3>
+      <p>Canva templates, Instagram stories &amp; highlights, basic content scheduling</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="sec-head"><span class="idx mono">03</span><h2>Additional Remote Projects</h2></div>
+  <p style="color:var(--ash); max-width:60ch; margin-bottom:28px; font-size:0.92rem;">Short-term freelance work taken on alongside full-time customer service roles — useful exposure, not a core specialty.</p>
+  <div class="proj-grid">
+    <div class="proj-card">
+      <span class="tag">2022 – 2023 · Part-time</span>
+      <h3>Amazon &amp; Shopify Store Support</h3>
+      <p>Assisted small e-commerce sellers with order processing, inventory updates, and product listing edits.</p>
+    </div>
+    <div class="proj-card">
+      <span class="tag">2023 – 2024 · Part-time</span>
+      <h3>Social Media Assistant — Flash Photo</h3>
+      <p>Supported content scheduling, Instagram stories/highlights, and template design using Canva for a boutique social media agency.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <h2>Let's talk about your support team's next hire.</h2>
+  <div class="contact-grid">
+    <div><div class="k">Email</div><a class="v" href="mailto:Perzues05@gmail.com">Perzues05@gmail.com</a></div>
+    <div><div class="k">Phone</div><a class="v" href="tel:+639955061380">+63 995-506-1380</a></div>
+    <div><div class="k">LinkedIn</div><a class="v" href="#">linkedin.com/in/ruby-ann-de-la-cruz</a></div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Ruby Ann Acosta De La Cruz</span>
+  <span>Cebu, Philippines</span>
+</footer>
+
+</body>
+</html>
